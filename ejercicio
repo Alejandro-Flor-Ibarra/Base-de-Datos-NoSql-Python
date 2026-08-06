@@ -1,0 +1,36 @@
+{
+  $jsonSchema: {
+    bsonType: 'object',
+    required: [
+      'codigo',
+      'nombre',
+      'categoria',
+      'precio'
+    ],
+    properties: {
+      codigo: {
+        bsonType: 'int',
+        minimum: 1000,
+        description: 'Codigo unico que identifica el producto'
+      },
+      nombre: {
+        bsonType: 'string',
+        description: 'Nombre del producto'
+      },
+      categoria: {
+        bsonType: 'string',
+        'enum': [
+          'Electrodomestico',
+          'ropa',
+          'calzado'
+        ],
+        description: 'Categoria del producto'
+      },
+      precio: {
+        bsonType: 'int',
+        minimum: 0,
+        description: 'Precio del producto tipo entero'
+      }
+    }
+  }
+}
