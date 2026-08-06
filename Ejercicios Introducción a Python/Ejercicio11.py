@@ -70,6 +70,15 @@ def crearCuenta():
 def consignarCuenta():
     os.system("cls")
     print("\t \tCONSIGNAR A CUENTA")
+    codigoCuentaAConsignar = input("Ingrese el código de la cuenta: ")
+    for cuenta in cuentas:
+        if cuenta["codigo"] == codigoCuentaAConsignar:
+            valorAConsignar = float(input("Ingrese el valor a consignar: "))
+            cuenta["saldo"] += valorAConsignar
+            print(f"Consignación exitosa. Nuevo saldo: {cuenta['saldo']}")
+            return
+    else:
+        print("Cuenta no encontrada.")
 def retirarCuenta():
     pass
 def consultarCuentaPorCodigo():
